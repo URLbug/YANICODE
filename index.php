@@ -7,7 +7,6 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("YANICODE");
 
 ?>
-
 <main class="website-workarea">
 
     <section class="banner banner_before1" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/assets/images/banner_blog.jpg');">
@@ -51,71 +50,83 @@ $APPLICATION->SetTitle("YANICODE");
         </div>
     </section>
 
-    <section class="container">
-        <div class="blog-list">
-            <a href="./blog-details.html" class="blog">
-                <div class="blog__img">
-                    <img width="100%" height="100%" src="<?=SITE_TEMPLATE_PATH?>/assets/images/test_blog-img1.jpg" alt="">
-                </div>
-                <div class="blog__desc">
-                    <div class="blog__title">
-                        Что такое продакш-студия и для чего она нужна?
-                    </div>
-                    <div class="blog__date">
-                        07.12.2020
-                    </div>
-                    <div class="blog_article">
-                        Визуальный брендинг тематического ресторана «Базилик»: разработка логотипа, дизайн-концепт фирменного стиля и проработка его в носителях, таких как вывески, дизайн меню и карты вин, плейсметы, а также авторский надзор на стадии внедрения. Визуальный брендинг тематического ресторана «Базилик»: разработка логотипа, дизайн-концепт фирменного стиля и проработка его в носителях, таких как вывески, дизайн меню и карты вин, плейсметы, а также авторский надзор на стадии внедрения.
-                    </div>
-                </div>
-            </a> <a href="./blog-details.html" class="blog">
-                <div class="blog__img">
-                    <img width="100%" height="100%" src="<?=SITE_TEMPLATE_PATH?>/assets/images/test_blog-img2.jpg" alt="">
-                </div>
-                <div class="blog__desc">
-                    <div class="blog__title">
-                        Личный бренд и что такое продакш- студия
-                    </div>
-                    <div class="blog__date">
-                        07.12.2020
-                    </div>
-                    <div class="blog_article">
-                        Визуальный брендинг тематического ресторана «Базилик»: разработка логотипа, дизайн-концепт фирменного стиля и проработка его в носителях, таких как вывески, дизайн меню и карты вин, плейсметы, а также авторский надзор на стадии внедрения. Визуальный брендинг тематического ресторана «Базилик»: разработка логотипа, дизайн-концепт фирменного стиля и проработка его в носителях, таких как вывески, дизайн меню и карты вин, плейсметы, а также авторский надзор на стадии внедрения.
-                    </div>
-                </div>
-            </a> <a href="./blog-details.html" class="blog">
-                <div class="blog__img">
-                    <img width="100%" height="100%" src="<?=SITE_TEMPLATE_PATH?>/assets/images/test_blog-img3.jpg" alt="">
-                </div>
-                <div class="blog__desc">
-                    <div class="blog__title">
-                        Что такое продакш-студия и для чего она нужна?
-                    </div>
-                    <div class="blog__date">
-                        07.12.2020
-                    </div>
-                    <div class="blog_article">
-                        Визуальный брендинг тематического ресторана «Базилик»: разработка логотипа, дизайн-концепт фирменного стиля и проработка его в носителях, таких как вывески, дизайн меню и карты вин, плейсметы, а также авторский надзор на стадии внедрения. Визуальный брендинг тематического ресторана «Базилик»: разработка логотипа, дизайн-концепт фирменного стиля и проработка его в носителях, таких как вывески, дизайн меню и карты вин, плейсметы, а также авторский надзор на стадии внедрения.
-                    </div>
-                </div>
-            </a> <a href="./blog-details.html" class="blog">
-                <div class="blog__img">
-                    <img width="100%" height="100%" src="<?=SITE_TEMPLATE_PATH?>/assets/images/test_blog-img4.jpg" alt="">
-                </div>
-                <div class="blog__desc">
-                    <div class="blog__title">
-                        Личный бренд и что такое продакш- студия
-                    </div>
-                    <div class="blog__date">
-                        07.12.2020
-                    </div>
-                    <div class="blog_article">
-                        Визуальный брендинг тематического ресторана «Базилик»: разработка логотипа, дизайн-концепт фирменного стиля и проработка его в носителях, таких как вывески, дизайн меню и карты вин, плейсметы, а также авторский надзор на стадии внедрения. Визуальный брендинг тематического ресторана «Базилик»: разработка логотипа, дизайн-концепт фирменного стиля и проработка его в носителях, таких как вывески, дизайн меню и карты вин, плейсметы, а также авторский надзор на стадии внедрения.
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-</main>
+    <?php
 
+    $APPLICATION->IncludeComponent(
+        "bitrix:news",
+        "yanicode_blog",
+        Array(
+            "ADD_ELEMENT_CHAIN" => "N",
+            "ADD_SECTIONS_CHAIN" => "N",
+            "AJAX_MODE" => "N",
+            "AJAX_OPTION_ADDITIONAL" => "",
+            "AJAX_OPTION_HISTORY" => "N",
+            "AJAX_OPTION_JUMP" => "N",
+            "AJAX_OPTION_STYLE" => "Y",
+            "BROWSER_TITLE" => "-",
+            "CACHE_FILTER" => "N",
+            "CACHE_GROUPS" => "Y",
+            "CACHE_TIME" => "36000000",
+            "CACHE_TYPE" => "A",
+            "CHECK_DATES" => "Y",
+            "DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
+            "DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
+            "DETAIL_DISPLAY_TOP_PAGER" => "N",
+            "DETAIL_FIELD_CODE" => array("",""),
+            "DETAIL_PAGER_SHOW_ALL" => "Y",
+            "DETAIL_PAGER_TEMPLATE" => "",
+            "DETAIL_PAGER_TITLE" => "Страница",
+            "DETAIL_PROPERTY_CODE" => array("",""),
+            "DETAIL_SET_CANONICAL_URL" => "N",
+            "DISPLAY_BOTTOM_PAGER" => "Y",
+            "DISPLAY_DATE" => "Y",
+            "DISPLAY_NAME" => "Y",
+            "DISPLAY_PICTURE" => "Y",
+            "DISPLAY_PREVIEW_TEXT" => "Y",
+            "DISPLAY_TOP_PAGER" => "N",
+            "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+            "IBLOCK_ID" => "3",
+            "IBLOCK_TYPE" => "blog",
+            "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+            "LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
+            "LIST_FIELD_CODE" => array("",""),
+            "LIST_PROPERTY_CODE" => array("",""),
+            "MESSAGE_404" => "",
+            "META_DESCRIPTION" => "-",
+            "META_KEYWORDS" => "-",
+            "NEWS_COUNT" => "4",
+            "PAGER_BASE_LINK_ENABLE" => "N",
+            "PAGER_DESC_NUMBERING" => "N",
+            "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+            "PAGER_SHOW_ALL" => "N",
+            "PAGER_SHOW_ALWAYS" => "N",
+            "PAGER_TEMPLATE" => ".default",
+            "PAGER_TITLE" => "Новости",
+            "PREVIEW_TRUNCATE_LEN" => "",
+            "SEF_FOLDER" => "/blog/",
+            "SEF_MODE" => "Y",
+            "SEF_URL_TEMPLATES" => Array("detail"=>"#ELEMENT_CODE#/","news"=>"","section"=>""),
+            "SET_LAST_MODIFIED" => "N",
+            "SET_STATUS_404" => "Y",
+            "SET_TITLE" => "N",
+            "SHOW_404" => "N",
+            "SORT_BY1" => "ACTIVE_FROM",
+            "SORT_BY2" => "SORT",
+            "SORT_ORDER1" => "DESC",
+            "SORT_ORDER2" => "ASC",
+            "STRICT_SECTION_CHECK" => "N",
+            "USE_CATEGORIES" => "N",
+            "USE_FILTER" => "N",
+            "USE_PERMISSIONS" => "N",
+            "USE_RATING" => "N",
+            "USE_REVIEW" => "N",
+            "USE_RSS" => "N",
+            "USE_SEARCH" => "N",
+            "USE_SHARE" => "N"
+        )
+    );
+
+    ?>
+
+</main>
 <?=require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");?>

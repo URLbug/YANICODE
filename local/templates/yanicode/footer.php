@@ -163,7 +163,7 @@ global $ASSET;
 $APPLICATION->IncludeComponent(
     "bitrix:form.result.new",
     "yanicode_form_result",
-    [
+    Array(
         "CACHE_TIME" => "3600",
         "CACHE_TYPE" => "A",
         "CHAIN_ITEM_LINK" => "",
@@ -174,12 +174,9 @@ $APPLICATION->IncludeComponent(
         "SEF_MODE" => "N",
         "SUCCESS_URL" => "/services/success.php",
         "USE_EXTENDED_ERRORS" => "N",
-        "VARIABLE_ALIASES" => [
-            "RESULT_ID" => "RESULT_ID",
-            "WEB_FORM_ID" => "WEB_FORM_ID"
-        ],
-        "WEB_FORM_ID" => "1",
-    ]
+        "VARIABLE_ALIASES" => array("RESULT_ID" => "RESULT_ID", "WEB_FORM_ID" => "WEB_FORM_ID"),
+        "WEB_FORM_ID" => "1"
+    )
 );
 
 ?>
