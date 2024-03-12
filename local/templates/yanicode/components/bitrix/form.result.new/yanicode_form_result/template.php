@@ -15,7 +15,7 @@ if($arResult['isFormErrors'] === 'Y')
     echo $arResult['FORM_ERROR_TEXT'];
 }
 
-if($arResult['isFOrmNote'] !== 'Y')
+if($arResult['isFormNote'] !== 'Y')
 {
     echo '<template id="popup-calculate-project">';
 
@@ -180,10 +180,6 @@ if($arResult['isFOrmNote'] !== 'Y')
     </div>
     </form>
 </template>
-
-<p>
-    <?=$arResult["REQUIRED_SIGN"];?> - <?=GetMessage("FORM_REQUIRED_FIELDS")?>
-</p>
 
 <?=$arResult["FORM_FOOTER"]?>
 
