@@ -53,91 +53,65 @@ $APPLICATION->SetTitle("Услуги");
         <h1 class="container-title">
             НАШИ УСЛУГИ
         </h1>
-        <div class="services-cover">
-            <div class="services">
-                <h2 class="services__title">
-                    БРЕНДИНГ
-                </h2>
-                <div class="services-category">
-                    <div class="services__item" data-popup="services-popup">Аудит бренда</div>
-                    <div class="services__item" data-popup="services-popup">Цлевая аудитория</div>
-                    <div class="services__item" data-popup="services-popup">Позиционирование</div>
-                    <div class="services__item" data-popup="services-popup">Концепция/Легенда</div>
-                </div>
-                <div class="services-category">
-                    <a href="123/" class="services__item" data-popup="services-popup">Нейминг</a>
-                    <div class="services__item" data-popup="services-popup">Логотип</div>
-                    <div class="services__item" data-popup="services-popup">Регистрация товарного знака</div>
-                    <div class="services__item" data-popup="services-popup">Фирменный стиль</div>
-                    <div class="services__item" data-popup="services-popup">Бренд-бук</div>
-                </div>
-                <div class="services-category">
-                    <div class="services__item" data-popup="services-popup">Дизайн-концепт упаковки</div>
-                    <div class="services__item" data-popup="services-popup">Дизайн упаковки</div>
-                    <div class="services__item" data-popup="services-popup">Digital</div>
-                    <div class="services__item" data-popup="services-popup">Внедрение</div>
-                </div>
-            </div>
 
-            <div class="services">
-                <h2 class="services__title">
-                    МАССОВЫЕ КОММУНИКАЦИИ
-                </h2>
-                <div class="services-category">
-                    <div class="services__item" data-popup="services-popup">Аудит коммуникаций бренда</div>
-                    <div class="services__item" data-popup="services-popup">Целевая аудитория</div>
-                    <div class="services__item" data-popup="services-popup">Коммуникационная стратегият</div>
-                    <div class="services__item" data-popup="services-popup">Креативный концепт</div>
-                    <div class="services__item" data-popup="services-popup">Тактические рекламные кампании</div>
-                    <div class="services__item" data-popup="services-popup">Медипланирование</div>
-                </div>
-                <div class="services-category">
-                    <div class="services__item" data-popup="services-popup">Видеопродакшн</div>
-                    <div class="services__item" data-popup="services-popup">Фотопродакшн</div>
-                    <div class="services__item" data-popup="services-popup">Дизайн</div>
-                </div>
-                <div class="services-category">
-                    <div class="services__item" data-popup="services-popup">Внедрение</div>
-                    <div class="services__item" data-popup="services-popup">Сопровождение</div>
-                </div>
-            </div>
+        <!--  Лист с услугами и их описанием  -->
+        <?php
 
-            <div class="services">
-                <h2 class="services__title">
-                    DIGITAL БРЕНДИНГ
-                </h2>
-                <div class="services-category">
-                    <div class="services__item" data-popup="services-popup">Аудит ситуации</div>
-                    <div class="services__item" data-popup="services-popup">Позиционирование</div>
-                    <div class="services__item" data-popup="services-popup">Фирменный стиль</div>
-                    <div class="services__item" data-popup="services-popup">Разработка уникального контента</div>
-                    <div class="services__item" data-popup="services-popup">Фотосессия</div>
-                    <div class="services__item" data-popup="services-popup">Видеовизитка</div>
-                    <div class="services__item" data-popup="services-popup">Оформление соц сетей</div>
-                    <div class="services__item" data-popup="services-popup">Контент-план</div>
-                    <div class="services__item" data-popup="services-popup">Сайт</div>
-                    <div class="services__item" data-popup="services-popup">Продвижение</div>
-                </div>
-            </div>
+        $APPLICATION->IncludeComponent(
+            "bitrix:news.list",
+            "yanicode_service",
+            Array(
+                "ACTIVE_DATE_FORMAT" => "d.m.Y",
+                "ADD_SECTIONS_CHAIN" => "Y",
+                "AJAX_MODE" => "N",
+                "AJAX_OPTION_ADDITIONAL" => "",
+                "AJAX_OPTION_HISTORY" => "N",
+                "AJAX_OPTION_JUMP" => "N",
+                "AJAX_OPTION_STYLE" => "Y",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+                "CACHE_TIME" => "36000000",
+                "CACHE_TYPE" => "A",
+                "CHECK_DATES" => "Y",
+                "DETAIL_URL" => "",
+                "DISPLAY_BOTTOM_PAGER" => "Y",
+                "DISPLAY_TOP_PAGER" => "N",
+                "FIELD_CODE" => array("",""),
+                "FILTER_NAME" => "",
+                "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                "IBLOCK_ID" => "4",
+                "IBLOCK_TYPE" => "service",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+                "INCLUDE_SUBSECTIONS" => "Y",
+                "MESSAGE_404" => "",
+                "NEWS_COUNT" => "55",
+                "PAGER_BASE_LINK_ENABLE" => "N",
+                "PAGER_DESC_NUMBERING" => "N",
+                "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                "PAGER_SHOW_ALL" => "N",
+                "PAGER_SHOW_ALWAYS" => "N",
+                "PAGER_TEMPLATE" => ".default",
+                "PAGER_TITLE" => "Новости",
+                "PARENT_SECTION" => "",
+                "PARENT_SECTION_CODE" => "",
+                "PREVIEW_TRUNCATE_LEN" => "",
+                "PROPERTY_CODE" => array("SERVICES_TYPE",""),
+                "SET_BROWSER_TITLE" => "Y",
+                "SET_LAST_MODIFIED" => "N",
+                "SET_META_DESCRIPTION" => "Y",
+                "SET_META_KEYWORDS" => "Y",
+                "SET_STATUS_404" => "N",
+                "SET_TITLE" => "Y",
+                "SHOW_404" => "N",
+                "SORT_BY1" => "ACTIVE_FROM",
+                "SORT_BY2" => "SORT",
+                "SORT_ORDER1" => "DESC",
+                "SORT_ORDER2" => "ASC",
+                "STRICT_SECTION_CHECK" => "N"
+            )
+        );
 
-            <div class="services">
-                <h2 class="services__title">
-                    ЛИЧНЫЙ БРЕНД
-                </h2>
-                <div class="services-category">
-                    <div class="services__item" data-popup="services-popup">Аудит ситуации</div>
-                    <div class="services__item" data-popup="services-popup">Целевая аудитория</div>
-                    <div class="services__item" data-popup="services-popup">Позиционирование</div>
-                    <div class="services__item" data-popup="services-popup">Личная легенда </div>
-                    <div class="services__item" data-popup="services-popup">Стратегия продвижения</div>
-                    <div class="services__item" data-popup="services-popup">Оформление соцсетей</div>
-                    <div class="services__item" data-popup="services-popup">Контент-план</div>
-                    <div class="services__item" data-popup="services-popup">Фотосессия</div>
-                    <div class="services__item" data-popup="services-popup">Подбор специалистов</div>
-                    <div class="services__item" data-popup="services-popup">Сайт</div>
-                </div>
-            </div>
-        </div>
+        ?>
 
         <div class="button-wrapper  button-wrapper_center">
             <div class="button button_gold button-open-calculate-project" data-popup="calculate-project-popup">
@@ -145,8 +119,6 @@ $APPLICATION->SetTitle("Услуги");
             </div>
         </div>
     </div>
-
-
 </main>
 
 <?=require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

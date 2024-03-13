@@ -50,6 +50,7 @@ $APPLICATION->SetTitle("YANICODE");
         </div>
     </section>
 
+    <!-- Вывод блога -->
     <?php
 
     $APPLICATION->IncludeComponent(
