@@ -36,26 +36,28 @@ foreach($arTypes as $arType)
             {
                 if($arItem['PROPERTYS']['TYPE']['VALUE'] === $arType)
                 {
-                    echo '<div class="services__item" data-popup="services-popup">' . $arItem['NAME'] . '</div>';
+            ?>
+                    <div class="services__item" data-popup="services-popup"><?=$arItem['NAME']?></div>
+
+                    <template id="<?=$arResult['NAME']?>">
+                        <div class="popup-services-cover">
+                            <div class="popup-services__title">
+                                <?=$arType;?>
+                            </div>
+                            <div class="popup-services__category">
+                                <?=$arItem['NAME'];?>
+                            </div>
+                            <div class="popup-services__desc">
+                                <?=$arItem['DETAIL_TEXT'];?>
+                            </div>
+                        </div>
+                    </template>
+            <?php
                 }
             }
             ?>
         </div>
     </div>
-
-    <template id="popup-services">
-        <div class="popup-services-cover">
-            <div class="popup-services__title">
-                1111
-            </div>
-            <div class="popup-services__category">
-                <?=$arResult['NAME'];?>
-            </div>
-            <div class="popup-services__desc">
-                <?=$arResult['DETAIL_TEXT'];?>
-            </div>
-        </div>
-    </template>
 <?php
 }
 ?>
