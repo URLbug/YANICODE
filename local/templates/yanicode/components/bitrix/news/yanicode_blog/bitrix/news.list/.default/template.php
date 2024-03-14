@@ -26,7 +26,7 @@ $this->setFrameMode(true);
 
         foreach($arResult['ITEMS'] as $arItem)
         {
-
+            // Эрмитраж для комплнента
             $this->AddEditAction(
                 $arItem['ID'],
                 $arItem['EDIT_LINK'],
@@ -46,7 +46,8 @@ $this->setFrameMode(true);
                     'CONFIRM' => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM'),
                 ]
             );
-            ?>
+
+        ?>
             <a href="<?=$arItem['DETAIL_PAGE_URL']?>"
                class="blog"
                id="<?=$this->GetEditAreaId($arItem['ID']);?>">
