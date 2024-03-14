@@ -5,15 +5,12 @@ if(!defined("B_PROLOG_INCLUDED") || !B_PROLOG_INCLUDED)
     die();
 }
 
-global $APPLICATION;
-global $ASSET;
-
 ?>
 
 <footer class="footer">
     <div class="container">
         <div class="footer-wrapper">
-            <a href="./index.html" class="footer__logo">
+            <a href="/" class="footer__logo">
                 <img width="232" height="71" src="<?=SITE_TEMPLATE_PATH?>/assets/images/svg/logo-yanicode.svg" alt="yanicode">
             </a>
             <div class="footer__feedback">
@@ -178,16 +175,6 @@ $APPLICATION->IncludeComponent(
         "WEB_FORM_ID" => "1"
     )
 );
-
-?>
-
-<?php
-
-$ASSET->addJs(SITE_TEMPLATE_PATH . "/assets/js/vendor/inputmask.min.js");
-$ASSET->addJs(SITE_TEMPLATE_PATH . "/assets/js/vendor/swiper-bundle.min.js");
-$ASSET->addJs(SITE_TEMPLATE_PATH . "/assets/js/build.js");
-
-$APPLICATION->ShowHead();
 
 ?>
 

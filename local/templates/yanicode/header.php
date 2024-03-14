@@ -4,25 +4,38 @@ if(!defined("B_PROLOG_INCLUDED") || !B_PROLOG_INCLUDED)
 {
     die();
 }
+
 use Bitrix\Main\Page\Asset;
 
-global $APPLICATION;
-
 $ASSET = Asset::getInstance();
+
+$APPLICATION->ShowHead();
+
 ?>
 
 <!DOCTYPE html>
 <html lang="<?=LANGUAGE_ID?>">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta class="js-meta-viewport" name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
+    <?php
+
+    // Мета данные
+    $ASSET->addString('<meta charset="utf-8">');
+    $ASSET->addString('<meta http-equiv="x-ua-compatible" content="ie=edge">');
+    $ASSET->addString('<meta class="js-meta-viewport" name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">');
+    $ASSET->addString('<meta name="format-detection" content="telephone=no">');
+
+    // CSS код
+    $ASSET->addCss(SITE_TEMPLATE_PATH . '/assets/template_styles.css');
+
+    // JS код
+    $ASSET->addJs(SITE_TEMPLATE_PATH . '/assets/js/vendor/inputmask.min.js');
+    $ASSET->addJs(SITE_TEMPLATE_PATH . '/assets/js/vendor/swiper-bundle.min.js');
+    $ASSET->addJs(SITE_TEMPLATE_PATH . '/assets/js/build.js');
+
+    ?>
 
     <title><?=$APPLICATION->ShowTitle()?></title>
-
-    <?=$ASSET->addCss(SITE_TEMPLATE_PATH . "/assets/template_styles.css");?>
 </head>
 
 <body>
@@ -48,20 +61,18 @@ $ASSET = Asset::getInstance();
                 $APPLICATION->IncludeComponent(
                         "bitrix:menu",
                         "yanicode_main_menu",
-                        [
+                        Array(
                             "ALLOW_MULTI_SELECT" => "N",
                             "CHILD_MENU_TYPE" => "top",
                             "DELAY" => "N",
                             "MAX_LEVEL" => "1",
-                            "MENU_CACHE_GET_VARS" => [
-                                    0 => "",
-                                ],
+                            "MENU_CACHE_GET_VARS" => array(0 => ""),
                             "MENU_CACHE_TIME" => "3600",
                             "MENU_CACHE_TYPE" => "N",
                             "MENU_CACHE_USE_GROUPS" => "Y",
                             "ROOT_MENU_TYPE" => "top",
                             "USE_EXT" => "N",
-                        ],
+                        ),
                         false);
                 ?>
 
