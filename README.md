@@ -11,6 +11,7 @@ PHP: PHP_8.0
 MySQL: MySQL-5.7-Win10
 ```
 
-### Информация для инфоблоков
+### Информация для инфоблоков и БД
+<a href="./yanicode.zip">YANICODE DB</a>
 <a href="./CSV">CSV таблицы</a>
 
