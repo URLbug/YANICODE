@@ -47,6 +47,27 @@ foreach($arTypes as $arType => $arColumn)
                 // Валидация на тип услуги для данных
                 if($arItem['PROPERTIES']['SERVICES_TYPE']['VALUE'] === $arType)
                 {
+                    // Эрмитраж для комплнента
+                    $this->AddEditAction(
+                        $arItem['ID'],
+                        $arItem['EDIT_LINK'],
+                        CIBlock::GetArrayByID(
+                            $arItem["IBLOCK_ID"],
+                            "ELEMENT_EDIT"
+                        )
+                    );
+
+                    $this->AddDeleteAction(
+                        $arItem['ID'],
+                        $arItem['DELETE_LINK'],
+                        CIBlock::GetArrayByID(
+                            $arItem['IBLOCK_ID'],
+                            'ELEMENT_DELETE'),
+                        [
+                            'CONFIRM' => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM'),
+                        ]
+                    );
+
                     // Валидация на то что нельзя делить на ноль
                     if($arColumn !== 0)
                     {
@@ -56,7 +77,10 @@ foreach($arTypes as $arType => $arColumn)
                         }
                     }
             ?>
-                <div class="services__item" onclick="servicesPopup('<?=$arItem['NAME']?>')">
+                <div class="services__item"
+                     onclick="servicesPopup('<?=$arItem['NAME']?>')"
+                     id="<?=$this->GetEditAreaId($arItem['ID']);?>"
+                >
                     <?=$arItem['NAME']?>
                 </div>
 
