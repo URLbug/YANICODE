@@ -24,12 +24,17 @@ $APPLICATION->SetTitle("Услуги");
     </section>
 
     <div class="container">
-        <h1 class="container-title">
-            НАШИ УСЛУГИ
-        </h1>
 
         <!--  Лист с услугами и их описанием  -->
         <?php
+
+        $APPLICATION->IncludeFile(
+            SITE_TEMPLATE_PATH . "/html/our_services.php",
+            [],
+            [
+                "MODE" => "html",
+            ]
+        );
 
         $APPLICATION->IncludeComponent(
             "bitrix:news.list",
