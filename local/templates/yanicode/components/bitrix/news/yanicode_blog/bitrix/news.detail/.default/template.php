@@ -24,9 +24,7 @@ $APPLICATION->SetPageProperty('title', $arResult['NAME']);
 <main class="website-workarea">
     <section class="">
         <div class="container blog_article">
-            <img width="100%"
-                 height="100%"
-                 src="<?=$arResult['DETAIL_PICTURE']['SRC'];?>"
+            <img src="<?=$arResult['DETAIL_PICTURE']['SRC'];?>"
                  alt="">
             <h1>
                 <?=$arResult['NAME'];?>

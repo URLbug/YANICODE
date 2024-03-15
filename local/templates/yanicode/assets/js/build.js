@@ -1565,6 +1565,7 @@ function validationReplay(input) {
       }
     }
   });
+
   var calculateProjectPopup = legancyPopup({
     content: document.querySelector('#popup-calculate-project'),
     title: 'РАССЧИТАТЬ ПРОЕКТ',

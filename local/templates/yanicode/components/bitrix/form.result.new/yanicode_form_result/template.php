@@ -60,7 +60,7 @@ if($arResult['isFormNote'] !== 'Y')
                 // Добавление валидации поля через JS
                 $class .= ' js-validated-field ';
 
-                $validation = 'data-validated_name="name" value';
+                $validation = 'data-validated_name="name" required value';
 
                 $arQuestion["HTML_CODE"] = str_replace(
                         'value',
@@ -91,9 +91,9 @@ if($arResult['isFormNote'] !== 'Y')
             // Классы для замены текущего класса в оригенальной верстке
             $classReplace = 'class="inputtext"';
 
-            $classPhone = 'class="popup-feedback__input mask-phone-js js-validated-field" data-validated_name="phone"';
+            $classPhone = 'class="popup-feedback__input mask-phone-js js-validated-field" data-validated_name="phone" required';
 
-            $classEmail = 'class="popup-feedback__input js-validated-field" data-validated_name="mail"';
+            $classEmail = 'class="popup-feedback__input js-validated-field" data-validated_name="mail" required';
 ?>
             <!-- Тут я сразу вывожу поле для ввода номера телефона и почты -->
             <!-- Предполагается что изменять поля никто не собирается  -->

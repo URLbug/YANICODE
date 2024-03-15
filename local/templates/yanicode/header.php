@@ -76,10 +76,18 @@ $APPLICATION->ShowHead();
                         false);
                 ?>
 
-                <div class="header__phone">
-                    <!-- Предполагаю, что контентредактор/админ будет редактировать номер телефона-->
-                    <a href="tel:+79114510616">+79114510616</a>
-                </div>
+                <?php
+
+                $APPLICATION->IncludeFile(
+                    SITE_TEMPLATE_PATH . "/html/phone.php",
+                    [],
+                    [
+                        "MODE" => "html",
+                    ]
+                );
+
+                ?>
+
             </div>
 
         </div>
