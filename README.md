@@ -11,6 +11,6 @@ PHP: PHP_8.0
 MySQL: MySQL-5.7-Win10
 ```
 
-### Информация для инфоблоков и БД
+### База данных
 <a href="./dump.sql">YANICODE DB</a>
 
