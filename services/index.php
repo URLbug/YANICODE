@@ -13,7 +13,7 @@ $APPLICATION->SetTitle("Услуги");
         <?php
 
         $APPLICATION->IncludeFile(
-            SITE_TEMPLATE_PATH . "/html/banner_service.php",
+            INCLUDE_PATH . "/html/services/banner_service.php",
             [],
             [
                 "MODE" => "html",
@@ -29,7 +29,7 @@ $APPLICATION->SetTitle("Услуги");
         <?php
 
         $APPLICATION->IncludeFile(
-            SITE_TEMPLATE_PATH . "/html/our_services.php",
+            INCLUDE_PATH . "/html/services/our_services.php",
             [],
             [
                 "MODE" => "html",
@@ -91,7 +91,7 @@ $APPLICATION->SetTitle("Услуги");
         );
 
         $APPLICATION->IncludeFile(
-            SITE_TEMPLATE_PATH . "/html/button_project.php",
+            INCLUDE_PATH . "/html/services/button_project.php",
             [],
             [
                 "MODE" => "html",

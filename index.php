@@ -13,7 +13,7 @@ $APPLICATION->SetTitle("YANICODE");
         <?php
 
         $APPLICATION->IncludeFile(
-                SITE_TEMPLATE_PATH . "/html/banner_index.php",
+            INCLUDE_PATH . "/html/banner_index.php",
                 [],
                 [
                     "MODE" => "html",

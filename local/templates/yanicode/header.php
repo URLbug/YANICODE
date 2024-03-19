@@ -9,7 +9,20 @@ use Bitrix\Main\Page\Asset;
 
 $ASSET = Asset::getInstance();
 
-$APPLICATION->ShowHead();
+// Мета данные
+$ASSET->addString('<meta charset="utf-8">');
+$ASSET->addString('<meta http-equiv="x-ua-compatible" content="ie=edge">');
+$ASSET->addString('<meta class="js-meta-viewport" name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">');
+$ASSET->addString('<meta name="format-detection" content="telephone=no">');
+
+// CSS код
+$ASSET->addCss(SITE_TEMPLATE_PATH . '/assets/template_styles.css');
+
+// JS код
+$ASSET->addJs(SITE_TEMPLATE_PATH . '/assets/js/vendor/inputmask.min.js');
+$ASSET->addJs(SITE_TEMPLATE_PATH . '/assets/js/vendor/swiper-bundle.min.js');
+$ASSET->addJs(SITE_TEMPLATE_PATH . '/assets/js/build.js');
+
 
 ?>
 
@@ -17,25 +30,9 @@ $APPLICATION->ShowHead();
 <html lang="<?=LANGUAGE_ID?>">
 
 <head>
-    <?php
-
-    // Мета данные
-    $ASSET->addString('<meta charset="utf-8">');
-    $ASSET->addString('<meta http-equiv="x-ua-compatible" content="ie=edge">');
-    $ASSET->addString('<meta class="js-meta-viewport" name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">');
-    $ASSET->addString('<meta name="format-detection" content="telephone=no">');
-
-    // CSS код
-    $ASSET->addCss(SITE_TEMPLATE_PATH . '/assets/template_styles.css');
-
-    // JS код
-    $ASSET->addJs(SITE_TEMPLATE_PATH . '/assets/js/vendor/inputmask.min.js');
-    $ASSET->addJs(SITE_TEMPLATE_PATH . '/assets/js/vendor/swiper-bundle.min.js');
-    $ASSET->addJs(SITE_TEMPLATE_PATH . '/assets/js/build.js');
-
-    ?>
-
     <title><?=$APPLICATION->ShowTitle()?></title>
+
+    <?=$APPLICATION->ShowHead();?>
 </head>
 
 <body>
@@ -76,17 +73,31 @@ $APPLICATION->ShowHead();
                         false);
                 ?>
 
-                <?php
+                <div class="header__phone">
+                    <a href="tel:<?php
 
-                $APPLICATION->IncludeFile(
-                    SITE_TEMPLATE_PATH . "/html/phone.php",
-                    [],
-                    [
-                        "MODE" => "html",
-                    ]
-                );
+                    $APPLICATION->IncludeFile(
+                        INCLUDE_PATH . "/html/phone.php",
+                        [],
+                        [
+                            "SHOW_BORDER" => false,
+                            "MODE" => "php",
+                        ]
+                    );
 
-                ?>
+                    ?>"><?php
+
+                        $APPLICATION->IncludeFile(
+                            INCLUDE_PATH . "/html/phone.php",
+                            [],
+                            [
+                                "MODE" => "text",
+                            ]
+                        );
+
+                        ?>
+                    </a>
+                </div>
 
             </div>
 

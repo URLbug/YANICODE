@@ -7,9 +7,30 @@ $APPLICATION->SetTitle("SUCCESS");
         <div class="banner-wrapper">
             <div class="container">
                 <div class="banner__content">
-                    <p><b class="text_gold">СООБЩЕНИЕ ОТПРАВЛЕНО!</b></p>
+                    <?php
 
-                    <a href="/">Вернутся назад</a>
+                    $APPLICATION->IncludeFile(
+                        INCLUDE_PATH . "/html/services/success.php",
+                        [],
+                        [
+                            "MODE" => "html",
+                        ]
+                    );
+
+                    echo '<a href="/">';
+
+                    $APPLICATION->IncludeFile(
+                        INCLUDE_PATH . "/html/services/button_success.php",
+                        [],
+                        [
+                            "MODE" => "text",
+                        ]
+                    );
+
+                    echo '</a>';
+
+                    ?>
+
                 </div>
             </div>
         </div>
