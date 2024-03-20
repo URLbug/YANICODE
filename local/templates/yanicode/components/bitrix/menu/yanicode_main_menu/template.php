@@ -9,8 +9,6 @@ if(!empty($arResult))
 {
 ?>
 <nav class="nav-list">
-    <a href="/" class="nav-list__item">ГЛАВНАЯ</a>
-
     <?php
 
     foreach($arResult as $arItem)

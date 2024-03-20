@@ -1,1 +1,1 @@
-info@yanicode.com
+info@yanicode.ru
