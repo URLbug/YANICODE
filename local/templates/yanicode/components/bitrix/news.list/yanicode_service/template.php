@@ -16,24 +16,14 @@ if(!defined("B_PROLOG_INCLUDED") || !B_PROLOG_INCLUDED)
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
-
 $this->setFrameMode(true);
 
 // Переменная для подсчета абзацев/столбцов
 $column = 0;
 
-// Ожидается, что других усулг не будет
-// Словарь с типом услуги и количеством абзацев/столбцов
-$arTypes = [
-    'БРЕНДИНГ' => 3,
-    'МАССОВЫЕ КОММУНИКАЦИИ' => 3,
-    'DIGITAL БРЕНДИНГ' => 0,
-    'ЛИЧНЫЙ БРЕНД' => 0,
-];
-
 echo '<div class="services-cover">';
 
-foreach($arTypes as $arType => $arColumn)
+foreach($arResult['SERVICES']  as $arType => $arColumn)
 {
 ?>
     <div class="services">

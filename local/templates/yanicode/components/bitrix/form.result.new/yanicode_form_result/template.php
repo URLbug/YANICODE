@@ -174,14 +174,11 @@ if($arResult['isFormNote'] !== 'Y')
             break;
         }
     }
-?>
-
-<?php
 
     // Оригенальная капча
     if($arResult["isUseCaptcha"] == "Y")
     {
-        ?>
+?>
         <?=GetMessage("FORM_CAPTCHA_TABLE_TITLE")?>
 
         <input type="hidden"
@@ -212,11 +209,10 @@ if($arResult['isFormNote'] !== 'Y')
                 class="button button_modal-gold js-button-submit"
                 value="отправить" />
     </div>
-    </form>
+
+    <?=$arResult["FORM_FOOTER"]?>
+
 </template>
-
-<?=$arResult["FORM_FOOTER"]?>
-
 <?php
 
 }

@@ -104,3 +104,4 @@ $ASSET->addJs(SITE_TEMPLATE_PATH . '/assets/js/build.js');
         </div>
     </div>
 </header>
+<main class="website-workarea">

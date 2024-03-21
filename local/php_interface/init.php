@@ -1,3 +1,3 @@
 <?php
 
-define('INCLUDE_PATH', '/local/include');
+define('INCLUDE_PATH', '/include');

@@ -21,17 +21,15 @@ $this->setFrameMode(true);
 $APPLICATION->SetPageProperty('title', $arResult['NAME']);
 
 ?>
-<main class="website-workarea">
-    <section class="">
-        <div class="container blog_article">
-            <img src="<?=$arResult['DETAIL_PICTURE']['SRC'];?>"
-                 alt="">
-            <h1>
-                <?=$arResult['NAME'];?>
-            </h1>
+<section class="">
+    <div class="container blog_article">
+        <img src="<?=$arResult['DETAIL_PICTURE']['SRC'];?>"
+             alt="">
+        <h1>
+            <?=$arResult['NAME'];?>
+        </h1>
 
-            <?=$arResult['DETAIL_TEXT'];?>
+        <?=$arResult['DETAIL_TEXT'];?>
 
-        </div>
-    </section>
-</main>
+    </div>
+</section>
