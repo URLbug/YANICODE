@@ -23,20 +23,21 @@ $column = 0;
 
 echo '<div class="services-cover">';
 
-foreach($arResult['SERVICES']  as $arType => $arColumn)
+foreach($arResult['SERVICES'] as $arServeice)
 {
 ?>
     <div class="services">
         <h2 class="services__title">
-            <?=$arType?>
+            <?=$arServeice['VALUE_XML_ID']?>
         </h2>
             <?php
 
             foreach($arResult['ITEMS'] as $arItem)
             {
                 // Валидация на тип услуги для данных
-                if($arItem['PROPERTIES']['SERVICES_TYPE']['VALUE'] === $arType)
-                {
+                if(
+                    $arItem['PROPERTIES']['SERVICES_TYPE']['VALUE_XML_ID'] === $arServeice['VALUE_XML_ID']
+                ) {
                     // Эрмитраж для комплнента
                     $this->AddEditAction(
                         $arItem['ID'],
@@ -59,9 +60,9 @@ foreach($arResult['SERVICES']  as $arType => $arColumn)
                     );
 
                     // Валидация на то что нельзя делить на ноль
-                    if($arColumn !== 0)
+                    if($arServeice['VALUE'] != 0)
                     {
-                        if (($column % $arColumn) === 0)
+                        if (($column % $arServeice['VALUE']) === 0)
                         {
                             echo '<div class="services-category">';
                         }
@@ -77,7 +78,7 @@ foreach($arResult['SERVICES']  as $arType => $arColumn)
                 <template id="<?=$arItem['NAME']?>">
                     <div class="popup-services-cover">
                         <div class="popup-services__title">
-                            <?=$arType;?>
+                            <?=$arServeice['VALUE_XML_ID'];?>
                         </div>
                         <div class="popup-services__category">
                             <?=$arItem['NAME'];?>
@@ -90,9 +91,9 @@ foreach($arResult['SERVICES']  as $arType => $arColumn)
         <?php
                 // Валидация на то что нельзя делить на ноль
                 // Закрывающея версия
-                if($arColumn !== 0)
+                if($arServeice['VALUE'] != 0)
                 {
-                    if (($column % $arColumn) === 0)
+                    if (($column % $arServeice['VALUE']) === 0)
                     {
                         echo '</div>';
                     }
@@ -101,6 +102,8 @@ foreach($arResult['SERVICES']  as $arType => $arColumn)
                 $column += 1;
             }
         }
+
+        $column = 0;
         ?>
     </div>
 <?php
